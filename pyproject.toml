@@ -1,0 +1,29 @@
+[project]
+name = "accio"
+version = "0.1.0"
+description = """
+Accio is a lightweight web crawler that, like the magical summoning spell 'Accio', fetches and processes web content based on natural language queries. 
+It utilizes small language models (sLLM) to efficiently process and retrieve information from crawled web pages.
+
+Key Features:
+- Natural language based web content retrieval
+- Context-window based content processing
+- Memory-efficient in-memory caching
+- Lightweight vector similarity search
+- Optimized for single desktop usage
+
+The project focuses on providing magical-like data retrieval while maintaining minimal resource usage through efficient content processing and smart caching strategies.
+"""
+authors = [
+    {name = "yomapi", email = "yomapi@example.com"}  # Please update with actual email
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
