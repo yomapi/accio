@@ -14,6 +14,9 @@ class CrawlerConfig(BaseModel):
     max_retries: int = Field(
         default=3, description="Maximum number of retries for failed requests"
     )
+    max_tokens: int = Field(
+        default=500, description="Maximum tokens for summary generation"
+    )
     headers: Dict[str, str] = Field(
         default_factory=lambda: {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",

@@ -1,34 +1,31 @@
-from accio import Accio
+from accio import Crawler
+from accio.core.config import CrawlerConfig
 from loguru import logger
 
 
 def main():
-    # Initialize Accio
-    accio = Accio()
+    # Initialize crawler with default config
+    crawler = Crawler(CrawlerConfig())
 
-    # Test URL
+    # Example URL to crawl
     url = "https://en.wikipedia.org/wiki/Web_crawler"
 
     try:
-        # Fetch and process the URL
         logger.info(f"Fetching and processing: {url}")
-        chunks = accio.fetch_and_process(url)
 
-        if chunks:
-            logger.info(f"Successfully processed URL. Got {len(chunks)} chunks.")
+        # Fetch and process the content
+        content = crawler.fetch_content(url)
 
-            # Print first few chunks
-            for i, chunk in enumerate(chunks[:3]):
-                logger.info(f"\nChunk {i + 1}:")
-                logger.info("=" * 50)
-                logger.info(chunk[:200] + "..." if len(chunk) > 200 else chunk)
-
+        if content:
+            print("Processed content:")
+            print(content)
         else:
-            logger.error("Failed to process URL")
+            logger.error("No content retrieved")
 
+    except Exception as e:
+        logger.error(f"Failed to process URL: {e}")
     finally:
-        # Cleanup
-        accio.close()
+        crawler.close()
 
 
 if __name__ == "__main__":
