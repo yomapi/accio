@@ -12,8 +12,8 @@ from ..core.config import ModelConfig
 
 MISTRAL_MODELS = {
     "tiny": {
-        "name": "mistral-7b-instruct-v0.2-q4_K_M.gguf",
-        "url": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2-q4_K_M.gguf",
+        "name": "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+        "url": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf",
         "size": 4_000_000_000,  # Approximate size in bytes
     }
 }
